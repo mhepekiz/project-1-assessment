@@ -34,7 +34,7 @@ function init(){
 
 function render(){
     checkClick();
-    if(result < 0){ showResult.style.color = '#ff0000'; }
+    if(result < 0){ showResult.style.color = '#ff0000'; } else { showResult.style.color = '#000000'; }
     inputNumber.value = 1;
     showResult.textContent = result;
 }
