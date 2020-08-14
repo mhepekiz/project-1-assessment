@@ -7,8 +7,8 @@ let showResult = document.querySelector('h1');
 
 //Event listener
 function checkClick(){
-    document.querySelector('#plus').addEventListener('click', calculatePlus);
-    document.querySelector('#minus').addEventListener('click', calculateMinus);
+    document.querySelector('#plus').addEventListener('click', calculate);
+    document.querySelector('#minus').addEventListener('click', calculate);
     }
 
     // Functions
@@ -17,18 +17,16 @@ function init(){
     render();
   }
 
-  function calculatePlus() {
-    if (inputNumber.value !== '')  {
+  function calculate(e) {
+      let operator = (e.target.id);
       let numA = parseInt(inputNumber.value);
-      result = result + numA;
-      render();
-    }
-  }
 
-  function calculateMinus() {
     if (inputNumber.value !== '')  {
-      let numA = parseInt(inputNumber.value);
-      result = result - numA;
+      if( operator === 'plus' ){   
+      result = result + numA; }
+      else if ( operator === 'minus'){
+        result = result - numA; 
+      }
       render();
     }
   }
